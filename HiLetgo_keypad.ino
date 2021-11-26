@@ -31,4 +31,5 @@ void loop(){
 
 /*
  * keypad connect to arduino in order, s13 side to digital2, s1 side to digital9              
+ * this is final version
  */
