@@ -28,3 +28,7 @@ void loop(){
     Serial.println(customKey);
   }
 }
+
+/*
+ * keypad connect to arduino in order, s13 side to digital2, s1 side to digital9              
+ */
