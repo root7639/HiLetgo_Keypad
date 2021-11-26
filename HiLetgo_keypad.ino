@@ -6,14 +6,14 @@ const byte COLS = 4; //4列のキーパッドを使用
  
 char keys[ROWS][COLS] = {
   //配列を表す
-  {'1', '2', '3', 'A'},
-  {'4', '5', '6', 'B'},
-  {'7', '8', '9', 'C'},
-  {'*', '0', '#', 'D'}
+  {'1', '2', '3', 'A'},  //{s13, s9, s5, s1},
+  {'4', '5', '6', 'B'},  //{s14, s10, s6, s2},
+  {'7', '8', '9', 'C'},  //{s15, s11, s7, s3},
+  {'*', '0', '#', 'D'}   //{s16, s12, s8, s4}に対応
 };
  
-byte rowPins[ROWS] = {9, 8, 7, 6}; //接続するピン番号
-byte colPins[COLS] = {5, 4, 3, 2}; 
+byte rowPins[ROWS] = {6, 7, 8, 9}; //接続するピン番号
+byte colPins[COLS] = {2, 3, 4, 5}; 
  
 Keypad customKeypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS); //キーパッドの初期化
  
@@ -28,16 +28,3 @@ void loop(){
     Serial.println(customKey);
   }
 }
-
-/*
- * {{s4, s8, s12, s16},
- *  {s3, s7, s11, s15},
- *  {s2, s6, s10, s14},
- *  {s1, s5, s9, s13}}
- *  =
- *  {1, 2, 3, A},
- *  {4, 5, 6, B},
- *  {7, 8, 9, C},
- *  {*, 0, #, D}}
- * 
- */
